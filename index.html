@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Natali Sobrero, psicóloga clínica com atendimento infantil, acolhimento a crianças com TEA e orientação familiar." />
+  <title>Natali Sobrero | Psicóloga Clínica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbf7f0;
+      --paper: #fffaf3;
+      --text: #30251f;
+      --muted: #6f625b;
+      --green: #263f2f;
+      --green-2: #3f6049;
+      --sand: #ded0bd;
+      --rose: #9b2242;
+      --rose-dark: #78172f;
+      --line: rgba(48, 37, 31, 0.12);
+      --shadow: 0 24px 70px rgba(48, 37, 31, 0.16);
+      --radius: 28px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1,h2,h3,.brand strong{
+      font-family:'Playfair Display', Georgia, serif;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251, 247, 240, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand strong {
+      font-size: 1.18rem;
+      letter-spacing: 0.04em;
+      color: var(--green);
+    }
+
+    .brand span {
+      margin-top: 5px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .menu a:hover {
+      color: var(--rose);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--rose);
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(155, 34, 66, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--rose-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border-color: rgba(155, 34, 66, 0.28);
+      color: var(--rose);
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    .hero {
+      padding: 74px 0 74px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 14px;
+      border: 1px solid rgba(155, 34, 66, 0.22);
+      border-radius: 999px;
+      background: rgba(155, 34, 66, 0.06);
+      color: var(--rose);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      color: var(--green);
+    }
+
+    h1 {
+      margin-top: 22px;
+      font-size: clamp(2.6rem, 6vw, 5.6rem);
+      letter-spacing: -0.055em;
+    }
+
+    .hero p {
+      margin: 26px 0 0;
+      max-width: 610px;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 36px;
+      background: linear-gradient(145deg, #e8dccd, #fff9ef);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -58px;
+      top: -58px;
+      border-radius: 50%;
+      background: rgba(155, 34, 66, 0.13);
+      z-index: 0;
+    }
+
+    .hero-card img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: min(660px, 72vh);
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: 26px;
+    }
+
+    .signature {
+      position: absolute;
+      z-index: 2;
+      right: 36px;
+      bottom: 34px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(251, 247, 240, 0.86);
+      color: var(--rose);
+      font-size: 1.1rem;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-title p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .about {
+      background: #fffdf8;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-photo {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 620px;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .text-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(28px, 5vw, 52px);
+      box-shadow: 0 16px 50px rgba(48, 37, 31, 0.08);
+    }
+
+    .text-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .text-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 30px;
+      border-radius: 26px;
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(48, 37, 31, 0.10);
+    }
+
+    .service-card .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: rgba(63, 96, 73, 0.10);
+      color: var(--green);
+      font-family: inherit;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .banner {
+      padding: 0;
+    }
+
+    .banner-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: var(--green);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .banner-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .banner-content {
+      padding: clamp(34px, 6vw, 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .banner-content h2 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .banner-content p {
+      margin: 20px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.08rem;
+    }
+
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .topic {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-family: inherit;
+      font-size: 0.92rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    details {
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 24px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--green);
+      font-size: 1.05rem;
+    }
+
+    details p {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      padding: 86px 0 94px;
+      background: #fffdf8;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+      padding: clamp(26px, 5vw, 48px);
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(222, 208, 189, 0.6), rgba(255, 250, 243, 0.9));
+      border: 1px solid var(--line);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .contact-box p {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .info-line {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(48, 37, 31, 0.08);
+      font-family: inherit;
+      color: var(--muted);
+    }
+
+    .info-line strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    footer {
+      padding: 30px 0;
+      background: var(--green);
+      color: rgba(255, 255, 255, 0.7);
+      font-family: inherit;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--green);
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 920px) {
+      .mobile-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .menu {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 88px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+        border-radius: 22px;
+        background: #fffdf8;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--line);
+      }
+
+      .menu.open {
+        display: flex;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .banner-inner,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .hero-card img,
+      .about-photo img {
+        height: auto;
+        max-height: none;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand strong {
+        font-size: 1rem;
+      }
+
+      .hero-actions,
+      .btn {
+        width: 100%;
+      }
+
+      .services-grid,
+      .faq-grid,
+      .topics {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .signature {
+        right: 20px;
+        bottom: 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Página inicial">
+        <strong>Natali Sobrero</strong>
+        <span>Psicóloga Clínica</span>
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+
+      <nav class="menu" id="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#atendimentos">Atendimentos</a>
+        <a href="#autismo">Autismo</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Atendimento infantil • TEA • Orientação familiar</span>
+          <h1>Cuidado psicológico com escuta, acolhimento e sensibilidade.</h1>
+          <p>
+            Atendimento clínico voltado ao desenvolvimento emocional infantil, acompanhamento de crianças com Transtorno do Espectro Autista e orientação para famílias.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Quero agendar uma conversa</a>
+            <a class="btn btn-outline" href="#atendimentos">Conhecer atendimentos</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="assets/natali-principal.jpeg" alt="Psicóloga Natali Sobrero" />
+          <div class="signature">— Natali Sobrero</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="assets/natali-sorrindo.jpeg" alt="Natali Sobrero em ensaio profissional" />
+        </div>
+
+        <div class="text-card">
+          <div class="section-title">
+            <h2>Sobre a Natali</h2>
+            <p>Psicóloga clínica com olhar atento à infância, ao desenvolvimento e às necessidades de cada família.</p>
+          </div>
+          <p>
+            Acredito que cada criança possui uma forma própria de sentir, expressar e se desenvolver. Por isso, o cuidado psicológico precisa respeitar o tempo, a história e as particularidades de cada paciente.
+          </p>
+          <p>
+            Meu trabalho é oferecer um espaço seguro, acolhedor e humanizado, onde a criança possa se expressar e desenvolver recursos emocionais de maneira gradual e respeitosa.
+          </p>
+          <p>
+            Também acompanho as famílias nesse processo, fortalecendo a comunicação, os vínculos e a compreensão sobre as necessidades da criança no dia a dia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="atendimentos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Como posso ajudar?</h2>
+          <p>Atendimento psicológico voltado à infância, desenvolvimento emocional, TEA e orientação familiar.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon">01</div>
+            <h3>Psicoterapia infantil</h3>
+            <p>Espaço de escuta, expressão e acolhimento para auxiliar a criança a lidar com emoções, medos, inseguranças e dificuldades do cotidiano.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">02</div>
+            <h3>Autismo / TEA</h3>
+            <p>Acompanhamento de crianças com Transtorno do Espectro Autista, respeitando suas características, necessidades sensoriais, emocionais e sociais.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">03</div>
+            <h3>Orientação familiar</h3>
+            <p>Encontros com responsáveis para compreender demandas, alinhar estratégias e fortalecer a convivência familiar.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">04</div>
+            <h3>Desenvolvimento emocional</h3>
+            <p>Apoio para que a criança desenvolva autonomia, segurança, comunicação emocional e formas mais saudáveis de enfrentar desafios.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">05</div>
+            <h3>Dificuldades escolares</h3>
+            <p>Acolhimento de questões relacionadas à adaptação escolar, socialização, insegurança, atenção, comportamento e rotina.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">06</div>
+            <h3>Ansiedade infantil</h3>
+            <p>Ajuda para reconhecer sinais de ansiedade, compreender emoções e construir recursos para lidar com situações difíceis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner" id="autismo">
+      <div class="container">
+        <div class="banner-inner">
+          <div class="banner-img">
+            <img src="assets/natali-autismo.jpeg" alt="Natali Sobrero com livro sobre autismo" />
+          </div>
+          <div class="banner-content">
+            <h2>Um olhar cuidadoso para o autismo.</h2>
+            <p>
+              Cada criança com TEA é única. O acompanhamento psicológico deve considerar suas potencialidades, desafios, formas de comunicação, interesses e necessidades individuais.
+            </p>
+            <p>
+              O objetivo é promover desenvolvimento, autonomia, segurança emocional e orientar a família para uma rotina mais acolhedora e possível.
+            </p>
+            <div class="topics">
+              <div class="topic">Acolhimento da criança</div>
+              <div class="topic">Orientação parental</div>
+              <div class="topic">Desenvolvimento emocional</div>
+              <div class="topic">Respeito às individualidades</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas">
+      <div class="container">
+        <div class="section-title">
+          <h2>Dúvidas frequentes</h2>
+          <p>Algumas respostas simples para quem está pensando em iniciar o acompanhamento psicológico.</p>
+        </div>
+
+        <div class="faq-grid">
+          <details>
+            <summary>Quando procurar psicoterapia infantil?</summary>
+            <p>Quando a criança apresenta sofrimento emocional, mudanças importantes de comportamento, dificuldades de adaptação, ansiedade, insegurança, problemas escolares ou desafios na socialização.</p>
+          </details>
+
+          <details>
+            <summary>Os pais participam do processo?</summary>
+            <p>Sim. No atendimento infantil, a orientação aos responsáveis é parte importante do processo, pois ajuda a compreender melhor a criança e alinhar estratégias para o dia a dia.</p>
+          </details>
+
+          <details>
+            <summary>Como funciona o atendimento com crianças com TEA?</summary>
+            <p>O acompanhamento considera as características de cada criança, buscando acolher suas necessidades, favorecer o desenvolvimento e orientar a família de forma respeitosa.</p>
+          </details>
+
+          <details>
+            <summary>Quanto tempo dura o acompanhamento?</summary>
+            <p>Depende da demanda, da idade da criança, dos objetivos terapêuticos e da evolução ao longo do processo. Essa avaliação é feita de forma individualizada.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-box">
+        <div>
+          <span class="eyebrow">Contato</span>
+          <h2>Agende seu atendimento.</h2>
+          <p>
+            Entre em contato para tirar dúvidas, verificar horários disponíveis ou agendar uma primeira conversa.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-line">
+            <strong>WhatsApp</strong>
+            (00) 00000-0000
+          </div>
+          <div class="info-line">
+            <strong>Instagram</strong>
+            @natalisobrero
+          </div>
+          <div class="info-line">
+            <strong>CRP</strong>
+            XX/XXXXX
+          </div>
+          <div class="info-line">
+            <strong>Atendimento</strong>
+            Infantil • TEA • Orientação familiar
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Natali Sobrero — Psicóloga Clínica. As informações deste site não substituem avaliação profissional individualizada.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('open');
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
