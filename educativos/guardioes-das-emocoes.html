@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="educativos.css">
+  <title>Guardiões das Emoções | Educativos</title>
+  <meta name="description" content="Jogo arcade educativo infantil em quatro fases sobre medo, ansiedade, raiva e solidão.">
+</head>
+<body>
+  <header class="edu-head">
+    <div class="wrap edu-nav">
+      <a class="brand" href="../index.html">Natali Sobrero</a>
+      <a class="back" href="educativos.html">← Voltar aos Educativos</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="eyebrow">Espaço da Criança</span>
+      <h1>Guardiões das Emoções</h1>
+      <p class="lead">Quatro fases, quatro desafios e quatro recursos para enfrentar momentos difíceis.</p>
+
+      <section class="guardian-shell">
+        <div class="guardian-hud">
+          <div class="guardian-stat"><small>Fase</small><strong id="phaseLabel">1 — Medo</strong></div>
+          <div class="guardian-stat"><small>Energia</small><strong id="livesLabel">❤️❤️❤️</strong></div>
+          <div class="guardian-stat"><small>Pontos</small><strong id="scoreLabel">0</strong></div>
+          <div class="guardian-stat"><small>Poder</small><strong id="weaponLabel">⭐ Coragem</strong></div>
+        </div>
+
+        <div class="guardian-stage" id="guardianStage">
+          <canvas id="guardianCanvas" width="1000" height="650"></canvas>
+
+          <div class="guardian-overlay active" id="guardianStart">
+            <div class="guardian-card">
+              <div class="guardian-symbol">🚀</div>
+              <h2>Guardiões das Emoções</h2>
+              <p>Movimente a nave e use o poder de cada fase para enfrentar os desafios.</p>
+              <p class="guardian-help">
+                <strong>Teclado:</strong> ← → ou A/D para mover · Espaço para atirar<br>
+                <strong>Celular:</strong> use os botões abaixo
+              </p>
+              <button class="primary-btn" id="guardianStartBtn" type="button">Começar</button>
+            </div>
+          </div>
+
+          <div class="guardian-overlay" id="guardianPhase">
+            <div class="guardian-card">
+              <div class="guardian-symbol" id="phaseSymbol">👻</div>
+              <span class="guardian-kicker" id="phaseKicker">FASE 1</span>
+              <h2 id="phaseTitle">Medo</h2>
+              <p id="phaseDescription">Use a Coragem para iluminar os fantasmas que aparecem pelo caminho.</p>
+              <div class="guardian-weapon" id="phaseWeapon">⭐ Poder: Coragem</div>
+              <button class="primary-btn" id="phaseContinueBtn" type="button">Começar fase</button>
+            </div>
+          </div>
+
+          <div class="guardian-overlay" id="guardianEnd">
+            <div class="guardian-card">
+              <div class="guardian-symbol">🌈</div>
+              <h2>Você completou a jornada!</h2>
+              <p id="guardianSummary">Você descobriu quatro recursos importantes.</p>
+              <div class="guardian-powers">
+                <span>⭐ Coragem</span>
+                <span>🌬️ Respiração</span>
+                <span>💧 Calma</span>
+                <span>❤️ Conexão</span>
+              </div>
+              <button class="primary-btn" id="guardianRestartBtn" type="button">Jogar novamente</button>
+            </div>
+          </div>
+
+          <div class="guardian-message" id="guardianMessage" aria-live="polite"></div>
+        </div>
+
+        <div class="guardian-controls">
+          <button id="guardianLeft" type="button">⬅️</button>
+          <button id="guardianShoot" type="button">✨ Atirar</button>
+          <button id="guardianRight" type="button">➡️</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Atividade educativa. Não substitui avaliação ou acompanhamento psicológico.</div>
+  </footer>
+
+  <script src="js/guardioes-das-emocoes.js"></script>
+</body>
+</html>

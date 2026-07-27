@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="educativos.css">
+  <title>Labirinto dos Pensamentos | Educativos</title>
+</head>
+<body>
+<header class="edu-head"><div class="wrap edu-nav">
+  <a class="brand" href="../index.html">Natali Sobrero</a>
+  <a class="back" href="educativos.html">← Voltar aos Educativos</a>
+</div></header>
+
+<main><div class="wrap">
+  <span class="eyebrow">Espaço da Criança</span>
+  <h1>Labirinto dos Pensamentos</h1>
+  <p class="lead">Explore o labirinto, encontre pensamentos que ajudam e descubra novas maneiras de olhar para os desafios.</p>
+
+  <section class="mind-shell">
+    <div class="mind-hud">
+      <div><small>Fase</small><strong id="mindLevel">1 / 3</strong></div>
+      <div><small>Energia</small><strong id="mindLives">❤️❤️❤️</strong></div>
+      <div><small>Pontos</small><strong id="mindScore">0</strong></div>
+      <div><small>Poder</small><strong id="mindPower">—</strong></div>
+    </div>
+
+    <div class="mind-stage">
+      <canvas id="mindCanvas" width="900" height="650"></canvas>
+
+      <div class="mind-overlay active" id="mindStart">
+        <div class="mind-card">
+          <div class="mind-big">🧠</div>
+          <h2>Labirinto dos Pensamentos</h2>
+          <p>Colete as luzes positivas, evite as nuvens que perseguem você e procure os pontos de reflexão 💡.</p>
+          <p class="mind-help"><strong>Teclado:</strong> setas ou WASD<br><strong>Celular:</strong> use os controles abaixo.</p>
+          <button class="primary-btn" id="mindStartBtn">Começar</button>
+        </div>
+      </div>
+
+      <div class="mind-overlay" id="reflectionOverlay">
+        <div class="mind-card reflection-card">
+          <div class="mind-big">💡</div>
+          <span class="mind-kicker">PONTO DE REFLEXÃO</span>
+          <h2 id="reflectionQuestion">“Eu não consigo fazer isso.”</h2>
+          <p>Qual pensamento pode ajudar mais agora?</p>
+          <div class="reflection-options">
+            <button id="reflectionHelpful"></button>
+            <button id="reflectionUnhelpful"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mind-overlay" id="mindLevelOverlay">
+        <div class="mind-card">
+          <div class="mind-big">🌱</div>
+          <span class="mind-kicker" id="mindLevelKicker">FASE CONCLUÍDA</span>
+          <h2 id="mindLevelTitle">Muito bem!</h2>
+          <p id="mindLevelText">Você encontrou novas possibilidades.</p>
+          <button class="primary-btn" id="mindNextBtn">Próxima fase</button>
+        </div>
+      </div>
+
+      <div class="mind-overlay" id="mindEnd">
+        <div class="mind-card">
+          <div class="mind-big">🌈</div>
+          <h2>Você atravessou o labirinto!</h2>
+          <p id="mindSummary"></p>
+          <div class="mind-powers-list">
+            <span>🛡️ Autoconfiança</span><span>🔦 Outra perspectiva</span>
+            <span>🐢 Pausa</span><span>❤️ Autocompaixão</span>
+          </div>
+          <button class="primary-btn" id="mindRestartBtn">Jogar novamente</button>
+        </div>
+      </div>
+
+      <div class="mind-message" id="mindMessage"></div>
+    </div>
+
+    <div class="mind-controls">
+      <span></span><button data-dir="up">⬆️</button><span></span>
+      <button data-dir="left">⬅️</button><button data-dir="down">⬇️</button><button data-dir="right">➡️</button>
+    </div>
+  </section>
+</div></main>
+
+<footer><div class="wrap">Atividade educativa. Não substitui avaliação ou acompanhamento psicológico.</div></footer>
+<script src="js/labirinto-dos-pensamentos.js"></script>
+</body>
+</html>

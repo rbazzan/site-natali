@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="educativos.css">
+  <title>Jornada das Boas Escolhas | Educativos</title>
+  <meta name="description" content="Jogo educativo infantil em estilo corrida lateral sobre escolhas sociais, empatia e regulação emocional.">
+</head>
+<body>
+  <header class="edu-head">
+    <div class="wrap edu-nav">
+      <a class="brand" href="../index.html">Natali Sobrero</a>
+      <a class="back" href="educativos.html">← Voltar aos Educativos</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="eyebrow">Espaço da Criança</span>
+      <h1>Jornada das Boas Escolhas</h1>
+      <p class="lead">Corra, pule os obstáculos e pegue atitudes que ajudam nas relações.</p>
+
+      <section class="runner-shell">
+        <div class="runner-hud">
+          <div class="runner-stat"><small>Distância</small><strong><span id="distance">0</span> m</strong></div>
+          <div class="runner-stat"><small>Boas escolhas</small><strong id="goodChoices">0</strong></div>
+          <div class="runner-stat energy-stat">
+            <small>Energia</small>
+            <div class="energy-bar"><span id="energyFill"></span></div>
+          </div>
+          <div class="runner-stat"><small>Poder</small><strong id="powerLabel">—</strong></div>
+        </div>
+
+        <div class="runner-stage" id="runnerStage" aria-label="Área do jogo">
+          <canvas id="gameCanvas" width="1100" height="520"></canvas>
+
+          <div class="runner-overlay active" id="startOverlay">
+            <div class="runner-card">
+              <span class="runner-icon">🏃</span>
+              <h2>Pronto para correr?</h2>
+              <p>Pule pedras e abismos. Pegue os itens que brilham e evite os itens com aparência sombria.</p>
+              <p class="runner-help"><strong>Teclado:</strong> Espaço / ↑ para pular · ↓ para abaixar<br><strong>Celular:</strong> toque para pular · deslize para baixo para abaixar</p>
+              <button type="button" class="primary-btn" id="startRunner">Começar</button>
+            </div>
+          </div>
+
+          <div class="runner-overlay" id="endOverlay">
+            <div class="runner-card">
+              <span class="runner-icon">🌱</span>
+              <h2>Todo mundo pode tentar novamente.</h2>
+              <p id="endSummary">Você avançou bastante!</p>
+              <button type="button" class="primary-btn" id="restartRunner">Jogar novamente</button>
+            </div>
+          </div>
+
+          <div class="runner-feedback" id="runnerFeedback" aria-live="polite"></div>
+        </div>
+
+        <div class="runner-mobile-controls">
+          <button type="button" id="jumpBtn">⬆️ Pular</button>
+          <button type="button" id="duckBtn">⬇️ Abaixar</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Atividade educativa. Não substitui avaliação ou acompanhamento psicológico.</div>
+  </footer>
+
+  <script src="js/jornada-boas-escolhas.js"></script>
+</body>
+</html>

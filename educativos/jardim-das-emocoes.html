@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="educativos.css">
+  <title>Chuva de Emoções | Educativos</title>
+  <meta name="description" content="Jogo educativo infantil para reconhecer emoções e relacioná-las a formas de cuidado e regulação.">
+</head>
+<body>
+  <header class="edu-head">
+    <div class="wrap edu-nav">
+      <a class="brand" href="../index.html">Natali Sobrero</a>
+      <a class="back" href="educativos.html">← Voltar aos Educativos</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="eyebrow">Espaço da Criança</span>
+      <h1>Chuva de Emoções</h1>
+      <p class="lead">
+        Ajude cada emoção a encontrar um lugar para ser cuidada.
+      </p>
+
+      <section class="rain-game-shell">
+        <div class="rain-hud">
+          <div class="hud-item"><small>Pontos</small><strong id="score">0</strong></div>
+          <div class="hud-item"><small>Combo</small><strong id="combo">x1</strong></div>
+          <div class="hud-item"><small>Tempo</small><strong id="timer">60</strong></div>
+          <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">🔇 Som</button>
+        </div>
+
+        <div class="rain-stage" id="rainStage" aria-label="Área do jogo">
+          <div class="cloud cloud-a">☁️</div>
+          <div class="cloud cloud-b">☁️</div>
+
+          <div class="drop-zone zone-breathe" data-zone="raiva">
+            <span>🌬️</span>
+            <strong>Respirar</strong>
+            <small>para a raiva</small>
+          </div>
+
+          <div class="drop-zone zone-care" data-zone="tristeza">
+            <span>🤗</span>
+            <strong>Acolher</strong>
+            <small>para a tristeza</small>
+          </div>
+
+          <div class="drop-zone zone-safe" data-zone="medo">
+            <span>🏠</span>
+            <strong>Lugar seguro</strong>
+            <small>para o medo</small>
+          </div>
+
+          <div class="drop-zone zone-talk" data-zone="preocupacao">
+            <span>💬</span>
+            <strong>Conversar</strong>
+            <small>para a preocupação</small>
+          </div>
+
+          <div class="drop-zone zone-good" data-zone="alegria">
+            <span>🌻</span>
+            <strong>Coisas boas</strong>
+            <small>para a alegria</small>
+          </div>
+
+          <div class="game-message" id="gameMessage">
+            Clique em <strong>Começar</strong> e arraste as emoções para o lugar certo.
+          </div>
+        </div>
+
+        <div class="rain-controls">
+          <button class="primary-btn" id="startGame" type="button">Começar</button>
+          <button class="secondary-btn" id="restartGame" type="button" disabled>Reiniciar</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Atividade educativa. Não substitui avaliação ou acompanhamento psicológico.</div>
+  </footer>
+
+  <script src="js/chuva-de-emocoes.js"></script>
+</body>
+</html>
