@@ -10,17 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbf7f0;
-      --paper: #fffaf3;
-      --text: #30251f;
-      --muted: #6f625b;
-      --green: #263f2f;
-      --green-2: #3f6049;
-      --sand: #ded0bd;
-      --rose: #9b2242;
-      --rose-dark: #78172f;
-      --line: rgba(48, 37, 31, 0.12);
-      --shadow: 0 24px 70px rgba(48, 37, 31, 0.16);
+      --bg: #F8F5EF;
+      --paper: #FFFCF8;
+      --text: #2E2926;
+      --muted: #746861;
+      --green: #244634;
+      --green-2: #667D6B;
+      --sand: #E6DDD1;
+      --rose: #AA2145;
+      --rose-dark: #861A37;
+      --line: rgba(46, 41, 38, 0.11);
+      --shadow: 0 24px 64px rgba(42, 36, 32, 0.12);
       --radius: 28px;
       --max: 1160px;
     }
@@ -33,7 +33,15 @@
       scroll-behavior: smooth;
     }
 
+::selection {
+      background: rgba(170, 33, 69, 0.18);
+      color: var(--green);
+    }
+
     body {
+      background-image:
+        radial-gradient(circle at 91% 13%, rgba(170, 33, 69, 0.065), transparent 24%),
+        radial-gradient(circle at 7% 72%, rgba(36, 70, 52, 0.045), transparent 28%);
       margin: 0;
       font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
       background: var(--bg);
@@ -64,7 +72,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(251, 247, 240, 0.88);
+      background: rgba(248, 245, 239, 0.93);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
@@ -129,7 +137,7 @@
     .btn-primary {
       background: var(--rose);
       color: #fff;
-      box-shadow: 0 14px 34px rgba(155, 34, 66, 0.28);
+      box-shadow: 0 14px 34px rgba(170, 33, 69, 0.20);
     }
 
     .btn-primary:hover {
@@ -138,7 +146,7 @@
     }
 
     .btn-outline {
-      border-color: rgba(155, 34, 66, 0.28);
+      border-color: rgba(170, 33, 69, 0.26);
       color: var(--rose);
       background: rgba(255, 255, 255, 0.48);
     }
@@ -158,9 +166,9 @@
     .eyebrow {
       display: inline-flex;
       padding: 8px 14px;
-      border: 1px solid rgba(155, 34, 66, 0.22);
+      border: 1px solid rgba(170, 33, 69, 0.23);
       border-radius: 999px;
-      background: rgba(155, 34, 66, 0.06);
+      background: rgba(170, 33, 69, 0.06);
       color: var(--rose);
       font-family: inherit;
       font-size: 0.78rem;
@@ -198,7 +206,7 @@
     .hero-card {
       position: relative;
       border-radius: 36px;
-      background: linear-gradient(145deg, #e8dccd, #fff9ef);
+      background: linear-gradient(145deg, #E9E1D6, #FAF6F0);
       padding: 16px;
       box-shadow: var(--shadow);
     }
@@ -211,7 +219,7 @@
       right: -58px;
       top: -58px;
       border-radius: 50%;
-      background: rgba(155, 34, 66, 0.13);
+      background: rgba(170, 33, 69, 0.13);
       z-index: 0;
     }
 
@@ -232,7 +240,7 @@
       bottom: 34px;
       padding: 12px 18px;
       border-radius: 999px;
-      background: rgba(251, 247, 240, 0.86);
+      background: rgba(248, 245, 239, 0.93);
       color: var(--rose);
       font-size: 1.1rem;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
@@ -259,7 +267,7 @@
     }
 
     .about {
-      background: #fffdf8;
+      background: #FFFDF9;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -289,7 +297,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: clamp(28px, 5vw, 52px);
-      box-shadow: 0 16px 50px rgba(48, 37, 31, 0.08);
+      box-shadow: 0 16px 46px rgba(42, 36, 32, 0.07);
     }
 
     .text-card p {
@@ -311,14 +319,14 @@
     .service-card {
       padding: 30px;
       border-radius: 26px;
-      background: #fffdf8;
+      background: #FFFDF9;
       border: 1px solid var(--line);
       transition: 0.2s ease;
     }
 
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(48, 37, 31, 0.10);
+      box-shadow: 0 18px 42px rgba(42, 36, 32, 0.10);
     }
 
     .service-card .icon {
@@ -327,7 +335,7 @@
       border-radius: 15px;
       display: grid;
       place-items: center;
-      background: rgba(63, 96, 73, 0.10);
+      background: rgba(102, 125, 107, 0.12);
       color: var(--green);
       font-family: inherit;
       font-weight: 800;
@@ -395,7 +403,7 @@
 
     .topic {
       padding: 14px 16px;
-      border-radius: 18px;
+      border-radius: 22px;
       background: rgba(255, 255, 255, 0.09);
       border: 1px solid rgba(255, 255, 255, 0.14);
       font-family: inherit;
@@ -409,7 +417,7 @@
     }
 
     details {
-      background: #fffdf8;
+      background: #FFFDF9;
       border: 1px solid var(--line);
       border-radius: 22px;
       padding: 22px 24px;
@@ -429,7 +437,7 @@
 
     .contact {
       padding: 86px 0 94px;
-      background: #fffdf8;
+      background: #FFFDF9;
       border-top: 1px solid var(--line);
     }
 
@@ -440,7 +448,7 @@
       align-items: stretch;
       padding: clamp(26px, 5vw, 48px);
       border-radius: 34px;
-      background: linear-gradient(135deg, rgba(222, 208, 189, 0.6), rgba(255, 250, 243, 0.9));
+      background: linear-gradient(135deg, rgba(235, 226, 214, 0.90), rgba(255, 250, 244, 0.95));
       border: 1px solid var(--line);
     }
 
@@ -463,9 +471,9 @@
 
     .info-line {
       padding: 18px 20px;
-      border-radius: 18px;
+      border-radius: 22px;
       background: rgba(255, 255, 255, 0.65);
-      border: 1px solid rgba(48, 37, 31, 0.08);
+      border: 1px solid rgba(46, 41, 38, 0.08);
       font-family: inherit;
       color: var(--muted);
     }
@@ -491,7 +499,7 @@
       height: 44px;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: #fffdf8;
+      background: #FFFDF9;
       color: var(--green);
       font-size: 1.4rem;
     }
@@ -512,7 +520,7 @@
         align-items: stretch;
         padding: 18px;
         border-radius: 22px;
-        background: #fffdf8;
+        background: #FFFDF9;
         box-shadow: var(--shadow);
         border: 1px solid var(--line);
       }
@@ -577,6 +585,16 @@
         font-size: 0.95rem;
       }
     }
+  
+    a, button {
+      transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, border-color .22s ease;
+    }
+
+    .btn-primary:hover,
+    .cta:hover {
+      transform: translateY(-2px);
+    }
+
   </style>
 </head>
 <body>
