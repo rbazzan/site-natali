@@ -807,7 +807,9 @@
     <div class="container">
       © <span id="year"></span> Natali Sobrero — Psicóloga Clínica. As informações deste site não substituem avaliação profissional individualizada.
     </div>
-  </footer>
+  
+<span class="site-counter" id="contador-acessos" aria-live="polite"></span>
+</footer>
 
   <script>
     function toggleMenu() {
@@ -816,5 +818,41 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+<script>
+async function atualizarContadorDeAcessos() {
+  const contador = document.getElementById("contador-acessos");
+  if (!contador) return;
+
+  try {
+    const resposta = await fetch(
+      "https://api.counterapi.dev/v1/natali-sobrero/site/up",
+      { cache: "no-store" }
+    );
+
+    if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+
+    const dados = await resposta.json();
+    const total =
+      dados.count ??
+      dados.value ??
+      dados.data?.count ??
+      dados.data?.value;
+
+    if (typeof total === "number") {
+      contador.textContent =
+        `👁️ ${new Intl.NumberFormat("pt-BR").format(total)} acessos`;
+    } else {
+      contador.textContent = "";
+    }
+  } catch (erro) {
+    console.warn("Não foi possível atualizar o contador de acessos.", erro);
+    contador.textContent = "";
+  }
+}
+
+atualizarContadorDeAcessos();
+</script>
+
 </body>
 </html>
